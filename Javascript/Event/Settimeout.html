@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout in javascript</title>
+</head>
+<body style="background-color: black; color: gold;">
+    <h1>SARTHAK DHAMA SDE</h1>
+    <button id="stop">STOP</button>
+</body>
+    <script>
+        const name= function(){
+            console.log("SARTHAK DHAMA SDE")
+
+        }
+
+        const ChangeText = function(){
+            document.querySelector("h1").innerHTML = " SARTHAK DHAMA IS THE BEST DEVELOPER"
+        }
+        const Change = setTimeout(ChangeText, 3000)
+
+        document.querySelector("#stop").addEventListener('click', function(){
+            clearTimeout(Change)
+            console.log("STOPPED")
+        })
+    </script>
+</html>

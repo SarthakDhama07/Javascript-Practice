@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Remove | Edit with DOM</title>
+
+</head>
+<body style="background-color: black; color: white;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+    
+</body>
+<script>
+    function addLanguage(languagename){
+        const li = document.createElement('li');
+        li.innerHTML = `${languagename}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("python")
+    addLanguage("Typescript")
+   
+    
+    /// OPTIMIZED WAY
+
+    function addoptimizedlanguage(languagename){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(languagename))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptimizedlanguage("java")
+
+
+    /// EDITING THE ELEMENT WITH HELP OF DOM
+    const secondlang = document.querySelector("li:nth-child(2)")
+    console.log(secondlang)
+    // secondlang.innerHTML = "cpp" 
+    // not a goood practice
+    const newli = document.createElement('li')
+    newli.textContent = 'cpp'
+    secondlang.replaceWith(newli)
+
+    /// EDIT METHOD -2 
+
+    const firstlang = document.querySelector("li:first-child")
+    firstlang.outerHTML = '<li>Ruby</li>'
+
+    /// REMOVE
+
+    const lastlang = document.querySelector("li:last-child")
+    lastlang.remove()
+
+
+
+
+</script>
+</html>

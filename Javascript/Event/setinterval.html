@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>\
+    <h1>SARTHAK DHAMA SDE</h1>
+    <button class="start">Start </button>
+    <button class="stop"> stop</button>
+
+    
+</body>
+<Script>
+    const saydate = function(str){
+        console.log(str, Date.now());
+
+    }
+
+    const intervalId = setInterval( saydate, 1000, "hi")
+    document.querySelector(".start").addEventListener('click', function(){
+        console.log(intervalId)
+    })
+    document.querySelector('.stop').addEventListener('click', function(){
+        clearInterval(intervalId)
+        console.log("stopped")
+    })
+</Script>
+</html>

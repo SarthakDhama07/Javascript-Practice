@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events In javascript</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+    
+</body>
+<script>
+    // console.log("Getting started with javascript events")
+
+
+    // document.getElementById('owl').onclick = function(){
+    // alert("Owl is Clicked")
+    // }
+        // .attachEvent()  will also perform same function but now we use add event linstener
+
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("Clicked inside ul")
+    // },false)
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("OWL CLICKED")
+    // }, false)
+
+    // this false bascially derived to event propogation false means event bubbling and true means event capturing basically bubbling goes chuldren to parent output and capturing is output of parent will print first and then goes to children
+
+    //// prevent default - it is bascallly used to stop any task you have assigned link on any link or any element
+
+    // document.getElementById("google").addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    // }, false)
+    // this prevent default funtion will stop a = google to land me to the google page 
+   
+   
+    /// REMOVING ELEMENT WITH HELP OF EVENT  
+    
+    
+
+    document.querySelector("#images").addEventListener('click', function(e){
+        console.log(e.target.tagName); 
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeit = e.target.parentNode
+            removeit.remove()
+        }
+    })
+
+
+
+</script>
+</html>
